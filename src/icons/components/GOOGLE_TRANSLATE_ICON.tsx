@@ -1,18 +1,23 @@
-import {FC} from "react";
-import {COLORS} from "../../components/Table/Cell/constants";
+import {FC, useRef} from "react";
+import {IconProps} from "./types.icons";
 
-const GOOGLE_TRANSLATE_ICON: FC<{ className?: string, color: COLORS}> = ({className, color}) => (
-    <svg version="1.1"
-         id="Capa_1"
-         xmlns="http://www.w3.org/2000/svg"
-         x="0px"
-         y="0px"
-         viewBox="0 0 228.403 228.403"
-         className={className}
-         // style="enable-background:new 0 0 228.403 228.403;"
-         fill={color}
-         >
-<path d="M215.428,73.112h-79.797l-12.998-56.41H12.977C5.821,16.701,0,22.523,0,29.678v112.637c0,7.155,5.821,12.977,12.977,12.977
+
+const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color, crossed}) => {
+  const firstLine =  <line className="cls-1" x1="228.4" y1="0.6" x2="0.6" y2="228.4"/>;
+  const secondLine = <line className="cls-1" x1="0.6" y1="0.6" x2="228.4" y2="228.4"/>;
+  const ref = useRef<HTMLAudioElement>()
+  return (
+      <>
+        <svg version="1.1"
+             id="Capa_1"
+             x="0px"
+             y="0px"
+             viewBox="0 0 228.403 228.403"
+             className={className}
+            // style="enable-background:new 0 0 228.403 228.403;"
+             fill={color}
+        >
+          <path d="M215.428,73.112h-79.797l-12.998-56.41H12.977C5.821,16.701,0,22.523,0,29.678v112.637c0,7.155,5.821,12.977,12.977,12.977
 	h79.794l12.999,56.41h109.659c7.154,0,12.975-5.821,12.975-12.977V86.088C228.403,78.933,222.583,73.112,215.428,73.112z
 	 M15,140.291V31.701h95.696l25.022,108.59H15z M108.164,155.291h28.195l-21.134,30.643L108.164,155.291z M213.403,196.701H126.02
 	l16.195-23.481l2.458,4.004c9.801-6.018,17.538-13.048,23.646-20.203l18.985,19.366l7.856-7.701l-20.103-20.506
@@ -22,7 +27,11 @@ const GOOGLE_TRANSLATE_ICON: FC<{ className?: string, color: COLORS}> = ({classN
 	v7.5c0,20.442-16.631,37.074-37.074,37.074s-37.074-16.632-37.074-37.074c0-20.442,16.631-37.073,37.074-37.073
 	c8.261,0,16.077,2.658,22.603,7.686l-9.155,11.883c-3.878-2.989-8.528-4.568-13.448-4.568c-12.171,0-22.074,9.902-22.074,22.073
 	c0,12.172,9.902,22.074,22.074,22.074c9.539,0,17.685-6.084,20.762-14.574H67.831V78.495z"/>
-</svg>
-);
+          {crossed ? firstLine && secondLine : null}
+        </svg>
+      </>
+
+  );
+}
 
 export default GOOGLE_TRANSLATE_ICON;

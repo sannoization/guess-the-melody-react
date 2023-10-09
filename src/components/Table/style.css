@@ -1,0 +1,7 @@
+.grid-container {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 20px;
+}

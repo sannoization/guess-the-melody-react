@@ -1,0 +1,49 @@
+[
+  {
+    "tour": "1",
+    "data": [
+      {
+        "isHeader": true, "src": "Категория", "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": true, "src": "100", "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": true, "src": "200", "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": true, "src": "300", "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": true, "src": "400", "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": true, "src": "The Beatles", "isAnswer": false,
+        "type": "DEFAULT"
+      },
+      {
+        "isHeader": false, "src": "../audio/1/q/beatles/1yesterday.mp3",
+        "isAnswer": true,
+        "type": "GOOGLE_TRANSLATE_ICON"
+      },
+      {
+        "isHeader": false, "src": "../audio/1/q/beatles/1yesterday.mp3",
+        "isAnswer": true,
+        "type": "EMOJI"
+      }
+
+    ],
+
+    "header_column": [
+      "The Beatles",
+      "Emoji",
+      "Мужские имена",
+      "А снег идет..."
+    ]
+  }
+]
