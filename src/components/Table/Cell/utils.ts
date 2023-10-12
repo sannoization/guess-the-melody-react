@@ -1,7 +1,7 @@
 export enum PICTURES {
   GOOGLE_TRANSLATE = 'GOOGLE_TRANSLATE',
   EMOJI = 'EMOJI',
-  DEFAULT = 'DEFAULT',
+  SOUND_ICON = 'SOUND_ICON',
   NONE = 'NONE'
 }
 
@@ -16,8 +16,8 @@ export const compareType = (type: string | undefined) => {
       return PICTURES.GOOGLE_TRANSLATE;
     case PICTURES.EMOJI:
       return PICTURES.EMOJI;
-    case PICTURES.DEFAULT:
-      return PICTURES.DEFAULT;
+    case PICTURES.SOUND_ICON:
+      return PICTURES.SOUND_ICON;
     default:
       return PICTURES.NONE;
   }

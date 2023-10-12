@@ -1,12 +1,11 @@
-import React from 'react';
 import './App.css';
-import {Table} from "./components/Table/Table";
+import { Page } from './components/TablePage';
 
 function App() {
 
   return (
       <div id='app'>
-        <Table/>
+        <Page/>
       </div>
   );
 }

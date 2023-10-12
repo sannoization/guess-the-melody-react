@@ -1,49 +1,157 @@
 [
   {
-    "tour": "1",
+    "tour": 1,
     "data": [
       {
-        "isHeader": true, "src": "Категория", "isAnswer": false,
+        "isHeader": true,
+        "title": "Категория",
+        "isAnswer": false,
         "type": "NONE"
       },
       {
-        "isHeader": true, "src": "100", "isAnswer": false,
+        "isHeader": true,
+        "title": "100",
+        "isAnswer": false,
         "type": "NONE"
       },
       {
-        "isHeader": true, "src": "200", "isAnswer": false,
+        "isHeader": true,
+        "title": "200",
+        "isAnswer": false,
         "type": "NONE"
       },
       {
-        "isHeader": true, "src": "300", "isAnswer": false,
+        "isHeader": true,
+        "title": "300",
+        "isAnswer": false,
         "type": "NONE"
       },
       {
-        "isHeader": true, "src": "400", "isAnswer": false,
+        "isHeader": true,
+        "title": "400",
+        "isAnswer": false,
         "type": "NONE"
       },
       {
-        "isHeader": true, "src": "The Beatles", "isAnswer": false,
-        "type": "DEFAULT"
+        "isHeader": true,
+        "title": "The Beatles",
+        "isAnswer": false,
+        "type": "NONE"
       },
       {
-        "isHeader": false, "src": "../audio/1/q/beatles/1yesterday.mp3",
-        "isAnswer": true,
-        "type": "GOOGLE_TRANSLATE_ICON"
+        "isHeader": false,
+        "src": "beatles/1yesterday.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
       },
       {
-        "isHeader": false, "src": "../audio/1/q/beatles/1yesterday.mp3",
-        "isAnswer": true,
+        "isHeader": false,
+        "src": "beatles/2yellowsub.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "beatles/3letitbe.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "beatles/4heyjude.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": true,
+        "title": "Emoji",
+        "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": false,
+        "src": "emoji/1zelenoglaz.jpg",
+        "isAnswer": false,
         "type": "EMOJI"
+      },
+      {
+        "isHeader": false,
+        "src": "emoji/2boje_man.jpg",
+        "isAnswer": false,
+        "type": "EMOJI"
+      },
+      {
+        "isHeader": false,
+        "src": "emoji/3eksponat.jpg",
+        "isAnswer": false,
+        "type": "EMOJI"
+      },
+      {
+        "isHeader": false,
+        "src": "emoji/4nevesta.jpg",
+        "isAnswer": false,
+        "type": "EMOJI"
+      },
+      {
+        "isHeader": true,
+        "title": "Snow",
+        "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": false,
+        "src": "snow/1potolok.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "snow/2JingleBells.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "snow/3zametaet.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "snow/4blueiney.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": true,
+        "title": "Man's name",
+        "isAnswer": false,
+        "type": "NONE"
+      },
+      {
+        "isHeader": false,
+        "src": "man_name/1aleshka_minus.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "man_name/2roman.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "man_name/3valera_valera_M.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
+      },
+      {
+        "isHeader": false,
+        "src": "man_name/4serega.mp3",
+        "isAnswer": false,
+        "type": "SOUND_ICON"
       }
-
-    ],
-
-    "header_column": [
-      "The Beatles",
-      "Emoji",
-      "Мужские имена",
-      "А снег идет..."
     ]
   }
 ]

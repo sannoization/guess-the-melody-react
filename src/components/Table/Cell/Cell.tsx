@@ -1,47 +1,47 @@
 import * as React from 'react';
 import {FC, useCallback, useEffect, useRef, useState} from 'react';
 import GOOGLE_TRANSLATE_ICON from "../../../icons/components/GOOGLE_TRANSLATE_ICON";
-import {COLORS, PICTURES} from "./constants";
+import {COLORS, PICTURES} from "./utils";
 import GALLERY_ICON from "../../../icons/components/GALLERY_ICON";
 import SOUND_ICON from "../../../icons/components/SOUND_ICON";
 import "./style.css";
 import H5AudioPlayer from "react-h5-audio-player";
 
 type Props = {
-  audioSrc?: string;
   type: PICTURES;
   isAnswerTour?: boolean;
   isHeader?: boolean;
-  text?: string
+  title?: string;
+  src?: string;
+  tour: number;
 };
 
-export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, text}) => {
+export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}) => {
   const [color, setColor] = useState<COLORS>(COLORS.BLACK);
-  const [isCrossed, setIsCrossed] = useState(false);
+  const [isAudio, setIsAudio] = useState(true);
+  const answer = isAnswerTour ? 'a' : 'q';
+  const source = process.env.PUBLIC_URL + `/audio/${tour}/${answer}/${src}`;
+
 
   useEffect(() => {
-    console.log(type)
     isAnswerTour ? setColor(COLORS.RED) : setColor(COLORS.BLACK);
-    if (isAnswerTour) setIsCrossed(true);
-  }, [isAnswerTour]);
+    if (src?.includes('jpg')) setIsAudio(false);
+  }, [src, isAnswerTour, type]);
 
   const renderIcon = () => {
 
     switch (type) {
       case PICTURES.GOOGLE_TRANSLATE:
-        console.log(isCrossed);
         return <GOOGLE_TRANSLATE_ICON
             color={color}
-            crossed={isCrossed}
             className="icon"/>
       case PICTURES.EMOJI:
-        console.log(isCrossed);
         return <GALLERY_ICON
+            key={src}
             color={color}
-            crossed={isCrossed}
+            src={src}
             className="icon "/>
-      case PICTURES.DEFAULT:
-        console.log(isCrossed);
+      case PICTURES.SOUND_ICON:
         return <SOUND_ICON
             color={color}
             className="icon"
@@ -57,31 +57,14 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, text}) => {
   return (
       <>
         <div className={isHeader ? "cell header-cell" : "cell cell-color"}>
-          {isHeader ? (<p>{text}</p>) : (renderIcon())}
-          <span>{text}</span>
-          <H5AudioPlayer
-              src={process.env.PUBLIC_URL + '/audio/q/snow/1potolok2.mp3'}
-              showSkipControls={false}
-              showFilledVolume={false}
-              showDownloadProgress={false}
-              autoPlay={true}
-              onPlay={() => console.log("onPlay")}
-              showJumpControls={false}>
-          </H5AudioPlayer>
+          {isHeader ? (<p>{title}</p>) : (renderIcon())}
+         {source ? isAudio ? (<H5AudioPlayer
+          src={source}
+          autoPlay={false}
+          showSkipControls={false}
+          showJumpControls={false}
+          />) : (null) : (null)}
         </div>
-        {/*<audio controls src={process.env.PUBLIC_URL + '/audio/q/p1tolok.mp3'}>audio</audio>*/}
       </>
-
-      // <div className="cell cell-color">
-      //   <img src={}
-      //        className="sound-icon jouele-control"
-      //        data-href={audioSrc}
-      //        data-type="play-pause"
-      //   >
-      //           <span className="remaining jouele-control"
-      //                 data-href={audioSrc}
-      //                 data-type="time-remaining"
-      //           ></span>
-      //   </div>
   );
 };

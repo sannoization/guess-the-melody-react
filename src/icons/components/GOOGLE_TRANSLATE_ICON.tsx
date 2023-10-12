@@ -1,11 +1,28 @@
-import {FC, useRef} from "react";
+import {FC, useCallback, useEffect, useRef, useState} from "react";
 import {IconProps} from "./types.icons";
 
 
-const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color, crossed}) => {
-  const firstLine =  <line className="cls-1" x1="228.4" y1="0.6" x2="0.6" y2="228.4"/>;
-  const secondLine = <line className="cls-1" x1="0.6" y1="0.6" x2="228.4" y2="228.4"/>;
-  const ref = useRef<HTMLAudioElement>()
+const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color}) => {
+  const firstLine =  <line x1="228.4" y1="0.6" x2="0.6" y2="228.4" stroke="#a7000d" strokeWidth='20px'/>;
+  const secondLine = <line x1="0.6" y1="0.6" x2="228.4" y2="228.4" stroke="#a7000d" strokeWidth='20px'/>;
+  const [isCrossed, setIsCrossed] = useState(false);
+
+  const changeCross = useCallback(
+    () => {
+      setIsCrossed(!isCrossed)
+    },
+    [isCrossed]
+  )
+
+  const renderOnlyLines = useCallback(
+    () => {
+      return (
+        [firstLine,secondLine]
+      )
+    },
+    [firstLine, secondLine],
+  )
+
   return (
       <>
         <svg version="1.1"
@@ -14,6 +31,7 @@ const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color, crossed}) => {
              y="0px"
              viewBox="0 0 228.403 228.403"
              className={className}
+             onClick={changeCross}
             // style="enable-background:new 0 0 228.403 228.403;"
              fill={color}
         >
@@ -27,7 +45,7 @@ const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color, crossed}) => {
 	v7.5c0,20.442-16.631,37.074-37.074,37.074s-37.074-16.632-37.074-37.074c0-20.442,16.631-37.073,37.074-37.073
 	c8.261,0,16.077,2.658,22.603,7.686l-9.155,11.883c-3.878-2.989-8.528-4.568-13.448-4.568c-12.171,0-22.074,9.902-22.074,22.073
 	c0,12.172,9.902,22.074,22.074,22.074c9.539,0,17.685-6.084,20.762-14.574H67.831V78.495z"/>
-          {crossed ? firstLine && secondLine : null}
+        {isCrossed ? renderOnlyLines() : null}
         </svg>
       </>
 
