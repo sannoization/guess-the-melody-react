@@ -26,7 +26,7 @@ const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color}) => {
   return (
       <>
         <svg version="1.1"
-             id="Capa_1"
+             id="translate"
              x="0px"
              y="0px"
              viewBox="0 0 228.403 228.403"

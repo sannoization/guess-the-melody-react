@@ -1,5 +1,4 @@
-import * as React from 'react';
-import {FC, useCallback, useEffect, useRef, useState} from 'react';
+import {FC, useEffect, useState} from 'react';
 import GOOGLE_TRANSLATE_ICON from "../../../icons/components/GOOGLE_TRANSLATE_ICON";
 import {COLORS, PICTURES} from "./utils";
 import GALLERY_ICON from "../../../icons/components/GALLERY_ICON";
@@ -22,10 +21,9 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}
   const answer = isAnswerTour ? 'a' : 'q';
   const source = process.env.PUBLIC_URL + `/audio/${tour}/${answer}/${src}`;
 
-
   useEffect(() => {
     isAnswerTour ? setColor(COLORS.RED) : setColor(COLORS.BLACK);
-    if (src?.includes('jpg')) setIsAudio(false);
+    if (!src?.includes('mp3')) setIsAudio(false);
   }, [src, isAnswerTour, type]);
 
   const renderIcon = () => {
@@ -39,8 +37,8 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}
         return <GALLERY_ICON
             key={src}
             color={color}
-            src={src}
-            className="icon "/>
+            src={source}
+            className={"icon"}/>
       case PICTURES.SOUND_ICON:
         return <SOUND_ICON
             color={color}
@@ -58,7 +56,7 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}
       <>
         <div className={isHeader ? "cell header-cell" : "cell cell-color"}>
           {isHeader ? (<p>{title}</p>) : (renderIcon())}
-         {source ? isAudio ? (<H5AudioPlayer
+          {source ? isAudio ? (<H5AudioPlayer
           src={source}
           autoPlay={false}
           showSkipControls={false}

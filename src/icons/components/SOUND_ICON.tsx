@@ -1,7 +1,7 @@
 import {FC, useCallback, useState} from "react";
 import {IconProps} from "./types.icons";
 
-const SOUND_ICON: FC<IconProps> = ({className, color, crossed}) => {
+const SOUND_ICON: FC<IconProps> = ({className, color, src}) => {
   const [isCrossed, setIsCrossed] = useState(false);
 
   const changeCross = useCallback(
