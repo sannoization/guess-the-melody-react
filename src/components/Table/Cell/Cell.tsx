@@ -12,10 +12,11 @@ type Props = {
   isHeader?: boolean;
   title?: string;
   src?: string;
+  aSrc?: string
   tour: number;
 };
 
-export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}) => {
+export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, aSrc, tour}) => {
   const [color, setColor] = useState<COLORS>(COLORS.BLACK);
   const [isAudio, setIsAudio] = useState(true);
   const answer = isAnswerTour ? 'a' : 'q';
@@ -59,6 +60,7 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}
           {source ? isAudio ? (<H5AudioPlayer
           src={source}
           autoPlay={false}
+          autoPlayAfterSrcChange={false}
           showSkipControls={false}
           showJumpControls={false}
           />) : (null) : (null)}

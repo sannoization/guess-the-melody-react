@@ -1,0 +1,21 @@
+nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  list-style: none;
+  background-color: white;
+  border: solid gray 1px;
+  border-radius: 10px 10px;
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  margin-left: 20px;
+}
+.button:hover {
+  background-color: wheat;
+}

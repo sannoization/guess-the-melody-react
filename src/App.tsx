@@ -1,11 +1,13 @@
 import './App.css';
-import { Page } from './components/TablePage';
+import {createBrowserRouter} from "react-router-dom";
 
 function App() {
 
+
+
   return (
       <div id='app'>
-        <Page/>
+
       </div>
   );
 }

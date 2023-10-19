@@ -6,22 +6,24 @@ import {compareType, PICTURES} from "./Cell/utils";
 import "./style.css";
 import config from "../../data/config.json";
 
-export const Table: FC<{tour: number}> = ({tour}) => {
+export const Table: FC<{ tourIndex: number, isAnswer: boolean }> = ({tourIndex, isAnswer}) => {
 
-  const data = config.map(f => f.data);
+  const data = config[tourIndex].data;
+  const tour = config[tourIndex].tour;
 
   return (
       <div className="grid-container">
-        {data.flat().map(f => {
-          const type: PICTURES = compareType(f.type);
-          return (
-              <Cell key={f.src ?? f.title} type={type} isAnswerTour={f.isAnswer}
-                    tour={tour}
-                    isHeader={f.isHeader}
-                    title={f.title ?? ''}
-                    src={f.src ?? ''}
-              />)}
-          )
+        {data.map(f => {
+              const type: PICTURES = compareType(f.type);
+              return (
+                  <Cell key={f.src ?? f.title} type={type} isAnswerTour={isAnswer}
+                        tour={tour}
+                        isHeader={f.isHeader}
+                        title={f.title ?? ''}
+                        src={isAnswer ? f.aSrc : f.src}
+                  />)
+            }
+        )
         }
       </div>
   );

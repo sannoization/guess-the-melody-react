@@ -1,28 +1,28 @@
 import { FC, useCallback, useEffect, useState } from "react";
 import './style.css'
 
-const Header: FC<{tour: number}> = ({tour}) => {
+const Header: FC<{tourIndex: number}> = ({tourIndex}) => {
     const [headerCaption, setHeaderCaption] = useState('');
     useEffect(() => {
-      switch(tour) {
-        case 1: setHeaderCaption('Отгадай название');
+      switch(tourIndex) {
+        case 0: setHeaderCaption('Отгадай название');
           break;
-        case 2: setHeaderCaption('Отгадай исполнителя');
+        case 1: setHeaderCaption('Отгадай исполнителя');
           break;
-        case 3: setHeaderCaption('Отгадай название и исполнителя');
-           break;
-        case 4: setHeaderCaption('Финал');
-           break;
+        case 2: setHeaderCaption('Отгадай название и исполнителя');
+          break;
+        case 3: setHeaderCaption('Финал');
+          break;
         default:
-            break;
+          break;
       }
     
-    }, [])
+    }, [tourIndex])
     
     
     return (
         <div className="header">
-            <h1>ТУР {tour}</h1>
+            <h1>ТУР {tourIndex + 1}</h1>
             <h2>{headerCaption}</h2>
         </div>
 
