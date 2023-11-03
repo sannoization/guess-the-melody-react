@@ -1,6 +1,5 @@
 import {FC, useCallback, useState} from "react";
 import {IconProps} from "./types.icons";
-import ReactModal from 'react-modal';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -23,10 +22,10 @@ const GALLERY_ICON: FC<IconProps> = ({className, color, src}) => {
 
   const changeCross = useCallback(
     () => {
-      setIsCrossed(!isCrossed);
+      setIsCrossed(true);
       setIsModalOpen(true);
     },
-    [isCrossed]
+    []
   )
 
   const renderOnlyLines = useCallback(

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Table } from '../components/Table/Table';
 import {FC} from 'react';

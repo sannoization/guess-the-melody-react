@@ -22,12 +22,12 @@ const Menu: FC<Props> = ({tourIndex, answers}) => {
       <nav>
         <Link className="button" to={'/'}>Меню</Link>
         {isTour ?
-            <Link className="button" to={prevTour}>{tourIndex} тур</Link> : ''
+            <Link reloadDocument className="button" to={prevTour}>{tourIndex} тур</Link> : ''
         }
-        <Link className="button" to={nextTour}>{tourIndex + 2} тур</Link>
+        <Link reloadDocument className="button" to={nextTour}>{tourIndex + 2} тур</Link>
         {answers ?
-            <Link className="button" to={currentTour}>Вопросы</Link>
-            : <Link className="button" to={currentTour + '/answers'}>Ответы</Link>
+            <Link reloadDocument className="button" to={currentTour}>Вопросы</Link>
+            : <Link reloadDocument className="button" to={currentTour + '/answers'}>Ответы</Link>
         }
       </nav>
   );

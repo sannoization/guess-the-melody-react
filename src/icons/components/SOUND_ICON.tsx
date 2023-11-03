@@ -6,9 +6,9 @@ const SOUND_ICON: FC<IconProps> = ({className, color, src}) => {
 
   const changeCross = useCallback(
     () => {
-      setIsCrossed(!isCrossed)
+      setIsCrossed(true)
     },
-    [isCrossed]
+    []
   )
 
   const renderLines = useCallback(

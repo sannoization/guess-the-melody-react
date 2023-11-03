@@ -1,4 +1,4 @@
-import {FC, useCallback, useEffect, useRef, useState} from "react";
+import {FC, useCallback, useState} from "react";
 import {IconProps} from "./types.icons";
 
 
@@ -9,9 +9,9 @@ const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color}) => {
 
   const changeCross = useCallback(
     () => {
-      setIsCrossed(!isCrossed)
+      setIsCrossed(true)
     },
-    [isCrossed]
+    []
   )
 
   const renderOnlyLines = useCallback(
