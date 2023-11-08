@@ -12,11 +12,10 @@ type Props = {
   isHeader?: boolean;
   title?: string;
   src?: string;
-  aSrc?: string
   tour: number;
 };
 
-export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, aSrc, tour}) => {
+export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}) => {
   const [color, setColor] = useState<COLORS>(COLORS.BLACK);
   const [isAudio, setIsAudio] = useState<boolean>(true);
   const answer = isAnswerTour ? 'a' : 'q';

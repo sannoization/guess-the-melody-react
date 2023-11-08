@@ -5,3 +5,12 @@
   margin-right: 25%;
   margin-bottom: 20px;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

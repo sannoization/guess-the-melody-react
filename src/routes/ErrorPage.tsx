@@ -1,18 +1,19 @@
 import * as React from 'react';
-import {useRouteError} from "react-router-dom";
+import {useNavigate, useRouteError} from "react-router-dom";
+import './style.css'
 
 const ErrorPage = () => {
   const error: any = useRouteError();
+  const navigate = useNavigate();
   console.error(error);
 
   return (
-      <div id="error-page">
-        <h1>Oops!</h1>
-        <p>Sorry, an unexpected error has occurred.</p>
-        <p>
-          <i>{error.statusText || error.message}</i>
-        </p>
+      <div id="error-page" className="errorPage">
+        <h1 className="errorHeader">{error.status}</h1>
+        <div className="message">{error.data}</div>
+        <button className='button' onClick={() => navigate(-1)}>back</button>
       </div>
   );
 };
+
 export default ErrorPage;

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import {FC} from 'react';
 import {Cell} from "./Cell/Cell";
@@ -13,7 +12,7 @@ export const Table: FC<{ tourIndex: number, isAnswer: boolean }> = ({tourIndex, 
 
   return (
       <div className="grid-container">
-        {data.map(f => {
+        {data.map((f: any) => {
               const type: PICTURES = compareType(f.type);
               return (
                   <Cell key={f.src ?? f.title} type={type} isAnswerTour={isAnswer}

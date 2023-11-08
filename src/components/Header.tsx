@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import './style.css'
 
 const Header: FC<{tourIndex: number}> = ({tourIndex}) => {

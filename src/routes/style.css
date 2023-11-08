@@ -14,8 +14,28 @@ nav {
   text-decoration: none;
   color: black;
   padding: 5px 10px;
+}
+
+.gap {
   margin-left: 20px;
 }
 .button:hover {
   background-color: wheat;
+}
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.errorHeader {
+  font-size: 50pt;
+}
+
+.message {
+  font-size: 10pt;
+  padding-bottom: 20px;
 }

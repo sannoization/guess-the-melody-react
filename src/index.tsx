@@ -6,6 +6,7 @@ import Root from "./routes/Root";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage";
 import TablePage from "./routes/TablePage";
+import {FinalPage} from "./routes/FinalPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
   {
     path: '/3tour/answers',
     element: <TablePage tourIndex={2} isAnswer={true}/>
+  },
+  {
+    path: '/4tour',
+    element: <FinalPage isAnswer={false}/>
+  },
+  {
+    path: '/4tour/answers',
+    element: <FinalPage isAnswer={true}/>
   }
 ]);
 
