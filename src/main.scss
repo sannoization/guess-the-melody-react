@@ -1,0 +1,154 @@
+@font-face {
+  font-family: 'Oswald';
+  src: local('Oswald Heavy'), local('Oswald-Heavy'), url('font/Oswaldheavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+$text-color: #f2c061;
+$bg-color: antiquewhite;
+$icon-size: 32px;
+$step: 5px;
+$default-margin: $step * 4;
+$main-font: 'Oswald', sans-serif;
+
+@mixin defaultFlexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerElements {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+@mixin defaultTopBottomMargins {
+  margin-top: $default-margin;
+  margin-bottom: $default-margin;
+}
+
+.cell {
+  font-family: $main-font;
+  border: solid black 1px;
+  padding-top: $step;
+  padding-bottom: $step;
+  text-align: center;
+
+  &.cellColor {
+    vertical-align: center;
+    background: $bg-color;
+  }
+
+  &.headerCell {
+    background: $text-color;
+  }
+
+  &.finalTextCell {
+    width: 20%;
+    font-size: 14pt;
+    background: $text-color;
+  }
+
+}
+
+.audioElement {
+  width: fit-content;
+  margin: auto;
+}
+
+.finalAudioCell {
+  @include defaultFlexContainer;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+  vertical-align: center;
+}
+
+.gridContainer {
+  @include centerElements;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  margin-bottom: $default-margin;
+}
+
+.tableHeader {
+  @include centerElements;
+  text-align: center;
+}
+
+.flexContainer {
+  @include defaultFlexContainer;
+  @include defaultTopBottomMargins;
+}
+
+nav {
+  @include defaultTopBottomMargins;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  list-style: none;
+  background-color: white;
+  border: solid gray 1px;
+  color: black;
+  border-radius: $step*2 $step*2;
+  text-decoration: none;
+  padding: $step $step*2;
+
+  &:hover {
+    background-color: wheat;
+  }
+
+  &.gap {
+    margin-left: $default-margin;
+  }
+}
+
+.errorPage {
+  @include defaultFlexContainer;
+}
+
+.errorHeader {
+  font-size: 50pt;
+}
+
+.message {
+  font-size: 10pt;
+  padding-bottom: $default-margin;
+}
+
+.imageSize {
+  @include centerElements;
+  width: 50%;
+  height: 50%;
+}
+
+.modalStyle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+}
+
+.overlayStyle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+

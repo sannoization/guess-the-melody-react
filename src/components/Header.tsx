@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import './style.css'
+import '../main.scss'
 
 const Header: FC<{tourIndex: number}> = ({tourIndex}) => {
     const [headerCaption, setHeaderCaption] = useState('');
@@ -21,7 +21,7 @@ const Header: FC<{tourIndex: number}> = ({tourIndex}) => {
     
     
     return (
-        <div className="header">
+        <div className="tableHeader">
             <h1>ТУР {tourIndex + 1}</h1>
             <h2>{headerCaption}</h2>
         </div>

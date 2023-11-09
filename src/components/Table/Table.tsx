@@ -2,7 +2,7 @@ import * as React from 'react';
 import {FC} from 'react';
 import {Cell} from "./Cell/Cell";
 import {compareType, PICTURES} from "./Cell/utils";
-import "./style.css";
+import  "../../main.scss"
 import config from "../../data/config.json";
 
 export const Table: FC<{ tourIndex: number, isAnswer: boolean }> = ({tourIndex, isAnswer}) => {
@@ -11,7 +11,7 @@ export const Table: FC<{ tourIndex: number, isAnswer: boolean }> = ({tourIndex, 
   const tour = config[tourIndex].tour;
 
   return (
-      <div className="grid-container">
+      <div className="gridContainer">
         {data.map((f: any) => {
               const type: PICTURES = compareType(f.type);
               return (

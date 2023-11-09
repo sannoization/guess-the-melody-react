@@ -1,14 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FileManagerPlugin = require("filemanager-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
-  output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
+  output: {path: path.join(__dirname, "build"), filename: "index.bundle.js"},
   mode: process.env.NODE_ENV || "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  devServer: { contentBase: path.join(__dirname, "src") },
+  devServer: {contentBase: path.join(__dirname, "src")},
   module: {
     rules: [
       {
@@ -23,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
@@ -34,6 +35,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
+    }),
+    new FileManagerPlugin({
+      events: {
+        onStart: {
+          delete: ['build'],
+        },
+      },
     }),
   ],
 };

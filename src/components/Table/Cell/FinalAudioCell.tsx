@@ -2,8 +2,8 @@ import * as React from 'react';
 import {FC, useCallback, useEffect, useRef, useState} from "react";
 import SOUND_ICON from "../../../icons/components/SOUND_ICON";
 import {COLORS} from "./utils";
-import "./style.css";
-import Player from "../AudioStream/Player";
+import  "../../../main.scss"
+import Player from "../Player/Player";
 import FinalTourTable from "../FinalTourTable";
 
 type Props = {
@@ -33,7 +33,7 @@ const FinalAudioCell: FC<Props> = ({isAnswerTour, src}) => {
 
   return (
       <>
-        <div className="final-audio-cell" onClick={playAudio}>
+        <div className="finalAudioCell" onClick={playAudio}>
           <SOUND_ICON color={color} className="icon" />
         <div>{currentTime}</div>
         </div>

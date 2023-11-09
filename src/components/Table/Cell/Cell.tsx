@@ -3,8 +3,8 @@ import GOOGLE_TRANSLATE_ICON from "../../../icons/components/GOOGLE_TRANSLATE_IC
 import {COLORS, PICTURES} from "./utils";
 import GALLERY_ICON from "../../../icons/components/GALLERY_ICON";
 import SOUND_ICON from "../../../icons/components/SOUND_ICON";
-import "./style.css";
-import Player from "../AudioStream/Player";
+import  "../../../main.scss"
+import Player from "../Player/Player";
 
 type Props = {
   type: PICTURES;
@@ -67,8 +67,8 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}
 
   return (
       <>
-        <div className={isHeader ? "cell header-cell" : "cell cell-color"}>
-          {isHeader ? (<p>{title}</p>) : (<div onClick={playAudio}>
+        <div className={isHeader ? "cell headerCell" : "cell cellColor"}>
+          {isHeader ? (<p>{title}</p>) : (<div className='audioElement' onClick={playAudio}>
             {renderIcon()}
           </div>)}
           {source ? isAudio ? (<>

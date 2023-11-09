@@ -1,6 +1,5 @@
 import * as React from 'react';
-import "./style.css";
-
+import  "../../main.scss"
 import finalTour from "../../data/finalTour.json";
 import FinalTextCell from "./Cell/FinalTextCell";
 import {FC} from "react";
@@ -8,10 +7,10 @@ import {FC} from "react";
 const FinalTourTable: FC = () => {
 
   return (
-      <div className="flex-container">
+      <div className="flexContainer">
         {finalTour.data.answers.map((i: any) => {
           return (
-              <FinalTextCell key={i} className="cell header-cell final-text-cell">{i}</FinalTextCell>
+              <FinalTextCell key={i} className="cell headerCell finalTextCell">{i}</FinalTextCell>
           )
         })}
       </div>

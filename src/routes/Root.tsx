@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FC} from "react";
-import './style.css'
+import '../main.scss'
 import {Link} from "react-router-dom";
 
 const Root: FC = () => {
