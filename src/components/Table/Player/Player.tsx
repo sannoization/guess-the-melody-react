@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {ChangeEvent, FC, LegacyRef, useCallback} from "react";
+import {buildTimeFormat} from "../Cell/utils";
 
 type Props = {
   setCurrentTime: (currentTime: string) => void;
@@ -16,12 +17,6 @@ const Player: FC<Props> = ({setCurrentTime, src, audioRef}) => {
 
     setCurrentTime(currentTime);
   }, [setCurrentTime]);
-
-  const buildTimeFormat = (time: number) => {
-    const symbol = '0';
-    const length = 2;
-    return (new Array(length + 1).join(symbol) + time).slice(-length)
-  }
 
   return (
       <>

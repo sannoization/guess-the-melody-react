@@ -10,6 +10,12 @@ export enum COLORS {
   BLACK = 'black'
 }
 
+export const buildTimeFormat = (time: number) => {
+  const symbol = '0';
+  const length = 2;
+  return (new Array(length + 1).join(symbol) + time).slice(-length)
+}
+
 export const compareType = (type: string | undefined) => {
   switch (type) {
     case PICTURES.GOOGLE_TRANSLATE:
