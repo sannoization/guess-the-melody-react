@@ -1,11 +1,11 @@
-import {FC, useCallback, useState} from "react";
+import {FC, useCallback, useMemo, useState} from "react";
 import {IconProps} from "./types.icons";
 import Modal from 'react-modal';
 import '../../main.scss'
 
 const GALLERY_ICON: FC<IconProps> = ({className, color, src}) => {
-  const firstLine = <line className="cls-1" x1="129" y1="0.6" x2="0.6" y2="129" stroke="#a7000d" strokeWidth='10px'/>;
-  const secondLine = <line className="cls-1" x1="0.6" y1="0.6" x2="129" y2="129" stroke="#a7000d" strokeWidth='10px'/>;
+  const firstLine = useMemo(() =>(<line className="cls-1" x1="129" y1="0.6" x2="0.6" y2="129" stroke="#a7000d" strokeWidth='10px'/>), []);
+  const secondLine = useMemo(() =>(<line className="cls-1" x1="0.6" y1="0.6" x2="129" y2="129" stroke="#a7000d" strokeWidth='10px'/>), []);
   const [isCrossed, setIsCrossed] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   Modal.setAppElement('#root');

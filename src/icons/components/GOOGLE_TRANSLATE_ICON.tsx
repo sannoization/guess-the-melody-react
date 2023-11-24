@@ -1,10 +1,10 @@
-import {FC, useCallback, useState} from "react";
+import {FC, useCallback, useMemo, useState} from "react";
 import {IconProps} from "./types.icons";
 
 
 const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color}) => {
-  const firstLine =  <line x1="228.4" y1="0.6" x2="0.6" y2="228.4" stroke="#a7000d" strokeWidth='20px'/>;
-  const secondLine = <line x1="0.6" y1="0.6" x2="228.4" y2="228.4" stroke="#a7000d" strokeWidth='20px'/>;
+  const firstLine = useMemo(() =>(<line className="cls-1" x1="129" y1="0.6" x2="0.6" y2="129" stroke="#a7000d" strokeWidth='10px'/>), []);
+  const secondLine = useMemo(() =>(<line className="cls-1" x1="0.6" y1="0.6" x2="129" y2="129" stroke="#a7000d" strokeWidth='10px'/>), []);
   const [isCrossed, setIsCrossed] = useState(false);
 
   const changeCross = useCallback(
