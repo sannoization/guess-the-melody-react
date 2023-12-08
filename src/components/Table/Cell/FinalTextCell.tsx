@@ -5,7 +5,7 @@ const FinalTextCell: FC<{children: any; className: string}> = ({children, classN
 
   const [isActive, setIsActive] = useState(false);
   return (
-      <div className={className} onClick={() => setIsActive(!isActive) }>
+      <div data-testid="finalTextCell" className={className} onClick={() => setIsActive(!isActive) }>
         {isActive ? <span>{children}</span> : <span>Show</span>}
       </div>
   );

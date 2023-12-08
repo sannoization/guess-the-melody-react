@@ -20,7 +20,7 @@ const Player: FC<Props> = ({setCurrentTime, src, audioRef}) => {
 
   return (
       <>
-        <audio ref={audioRef} src={src} onTimeUpdate={timeUpdate}/>
+        <audio data-testid='audio' ref={audioRef} src={src} onTimeUpdate={timeUpdate}/>
       </>
   );
 };

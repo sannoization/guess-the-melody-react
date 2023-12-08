@@ -21,7 +21,7 @@ const Header: FC<{tourIndex: number}> = ({tourIndex}) => {
     
     
     return (
-        <div className="tableHeader">
+        <div data-testid='header' className="tableHeader">
             <h1>ТУР {tourIndex + 1}</h1>
             <h2>{headerCaption}</h2>
         </div>

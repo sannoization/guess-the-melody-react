@@ -18,11 +18,10 @@ const Menu: FC<Props> = ({tourIndex, answers}) => {
   useEffect(() => {
     if (tourIndex === 0) setIsStartTour(false); else setIsStartTour(true);
     if (tourIndex === 3) setIsFinalTour(false); else setIsFinalTour(true);
-    console.log(tourIndex);
   }, [tourIndex]);
 
   return (
-      <nav>
+      <nav data-testid='menu'>
         <Link className="button gap" to={'/'}>Меню</Link>
         {isStartTour ?
             <Link reloadDocument className="button gap" to={prevTour}>{tourIndex} тур</Link> : ''

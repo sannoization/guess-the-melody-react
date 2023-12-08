@@ -11,7 +11,7 @@ type Props = {
 const TablePage: FC<Props> = ({tourIndex, isAnswer}) => {
 
   return (
-      <div>
+      <div data-testid='tablepage'>
         <Menu tourIndex={tourIndex} answers={isAnswer}/>
         <Header tourIndex={tourIndex}/>
         <Table tourIndex={tourIndex} isAnswer={isAnswer}/>

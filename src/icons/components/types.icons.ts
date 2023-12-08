@@ -5,4 +5,5 @@ export type IconProps = {
   color: COLORS;
   src?: string
   onClick?: () => void;
+  innerKey?: string;
 }

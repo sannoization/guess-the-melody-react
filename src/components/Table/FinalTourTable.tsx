@@ -7,7 +7,7 @@ import {FC} from "react";
 const FinalTourTable: FC = () => {
 
   return (
-      <div className="flexContainer">
+      <div data-testid='finaltourtable' className="flexContainer">
         {finalTour.data.answers.map((i: any) => {
           return (
               <FinalTextCell key={i} className="cell headerCell finalTextCell">{i}</FinalTextCell>

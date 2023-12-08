@@ -43,17 +43,18 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}
     switch (type) {
       case PICTURES.GOOGLE_TRANSLATE:
         return <GOOGLE_TRANSLATE_ICON
+            innerKey={src}
             color={color}
             className="icon"/>
       case PICTURES.EMOJI:
         return <GALLERY_ICON
-            key={src}
+            innerKey={src}
             color={color}
             src={source}
             className={"icon"}/>
       case PICTURES.SOUND_ICON:
         return <SOUND_ICON
-            key={src}
+            innerKey={src}
             color={color}
             className="icon"
         />
@@ -68,7 +69,7 @@ export const Cell: FC<Props> = ({type, isAnswerTour, isHeader, title, src, tour}
   return (
       <>
         <div className={isHeader ? "cell headerCell" : "cell cellColor"}>
-          {isHeader ? (<p>{title}</p>) : (<div className='audioElement' onClick={playAudio}>
+          {isHeader ? (<p>{title}</p>) : (<div data-testid="clickable" className='audioElement' onClick={playAudio}>
             {renderIcon()}
           </div>)}
           {source ? isAudio ? (<>

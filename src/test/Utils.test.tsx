@@ -1,5 +1,5 @@
-import {buildTimeFormat, compareType, PICTURES} from "./components/Table/Cell/utils";
-import SOUND_ICON from "./icons/components/SOUND_ICON";
+import {buildTimeFormat, compareType, PICTURES} from "../components/Table/Cell/utils";
+import SOUND_ICON from "../icons/components/SOUND_ICON";
 
 
 test("func test",() => {

@@ -2,40 +2,45 @@ import {FC, useCallback, useMemo, useState} from "react";
 import {IconProps} from "./types.icons";
 
 
-const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color}) => {
-  const firstLine = useMemo(() =>(<line className="cls-1" x1="129" y1="0.6" x2="0.6" y2="129" stroke="#a7000d" strokeWidth='10px'/>), []);
-  const secondLine = useMemo(() =>(<line className="cls-1" x1="0.6" y1="0.6" x2="129" y2="129" stroke="#a7000d" strokeWidth='10px'/>), []);
+const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color, innerKey}) => {
+  const firstLine = useMemo(() => (
+      <line key={`cross-one-${innerKey}`} data-testid='clicked' className="cls-1" x1="129" y1="0.6" x2="0.6" y2="129"
+            stroke="#a7000d" strokeWidth='10px'/>), []);
+  const secondLine = useMemo(() => (
+      <line key={`cross-two-${innerKey}`} className="cls-1" x1="0.6" y1="0.6" x2="129" y2="129" stroke="#a7000d"
+            strokeWidth='10px'/>), []);
   const [isCrossed, setIsCrossed] = useState(false);
 
   const changeCross = useCallback(
-    () => {
-      setIsCrossed(true)
-    },
-    []
+      () => {
+        setIsCrossed(true)
+      },
+      []
   )
 
-  const renderOnlyLines = useCallback(
-    () => {
-      return (
-        [firstLine,secondLine]
-      )
-    },
-    [firstLine, secondLine],
+  const renderLines = useCallback(
+      () => {
+        return (
+            [firstLine, secondLine]
+        )
+      },
+      [firstLine, secondLine],
   )
 
   return (
       <>
-        <svg version="1.1"
-             id="translate"
-             x="0px"
-             y="0px"
-             viewBox="0 0 228.403 228.403"
-             className={className}
-             onClick={changeCross}
-            // style="enable-background:new 0 0 228.403 228.403;"
-             fill={color}
+        <svg
+            data-testid='icon'
+            version="1.1"
+            id="translate"
+            x="0px"
+            y="0px"
+            viewBox="0 0 228.403 228.403"
+            className={className}
+            onClick={changeCross}
+            fill={color}
         >
-          <path d="M215.428,73.112h-79.797l-12.998-56.41H12.977C5.821,16.701,0,22.523,0,29.678v112.637c0,7.155,5.821,12.977,12.977,12.977
+          <path key={`path-${innerKey}`} d="M215.428,73.112h-79.797l-12.998-56.41H12.977C5.821,16.701,0,22.523,0,29.678v112.637c0,7.155,5.821,12.977,12.977,12.977
 	h79.794l12.999,56.41h109.659c7.154,0,12.975-5.821,12.975-12.977V86.088C228.403,78.933,222.583,73.112,215.428,73.112z
 	 M15,140.291V31.701h95.696l25.022,108.59H15z M108.164,155.291h28.195l-21.134,30.643L108.164,155.291z M213.403,196.701H126.02
 	l16.195-23.481l2.458,4.004c9.801-6.018,17.538-13.048,23.646-20.203l18.985,19.366l7.856-7.701l-20.103-20.506
@@ -45,7 +50,7 @@ const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color}) => {
 	v7.5c0,20.442-16.631,37.074-37.074,37.074s-37.074-16.632-37.074-37.074c0-20.442,16.631-37.073,37.074-37.073
 	c8.261,0,16.077,2.658,22.603,7.686l-9.155,11.883c-3.878-2.989-8.528-4.568-13.448-4.568c-12.171,0-22.074,9.902-22.074,22.073
 	c0,12.172,9.902,22.074,22.074,22.074c9.539,0,17.685-6.084,20.762-14.574H67.831V78.495z"/>
-        {isCrossed ? renderOnlyLines() : null}
+          {isCrossed ? renderLines() : null}
         </svg>
       </>
 
