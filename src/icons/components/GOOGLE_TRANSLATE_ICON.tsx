@@ -5,10 +5,10 @@ import {IconProps} from "./types.icons";
 const GOOGLE_TRANSLATE_ICON: FC<IconProps> = ({className, color, innerKey}) => {
   const firstLine = useMemo(() => (
       <line key={`cross-one-${innerKey}`} data-testid='clicked' className="cls-1" x1="129" y1="0.6" x2="0.6" y2="129"
-            stroke="#a7000d" strokeWidth='10px'/>), []);
+            stroke="#a7000d" strokeWidth='10px'/>), [innerKey]);
   const secondLine = useMemo(() => (
       <line key={`cross-two-${innerKey}`} className="cls-1" x1="0.6" y1="0.6" x2="129" y2="129" stroke="#a7000d"
-            strokeWidth='10px'/>), []);
+            strokeWidth='10px'/>), [innerKey]);
   const [isCrossed, setIsCrossed] = useState(false);
 
   const changeCross = useCallback(
