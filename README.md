@@ -1,4 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![pipeline](https://github.com/sannoization/guess-the-melody-react/actions/workflows/pages/pages-build-deployment/badge.svg?branch=master)](https://github.com/sannoization/guess-the-melody-react/actions/workflows/pages/pages-build-deployment)
+
 
 # Requirements
 - node v16.13.2
